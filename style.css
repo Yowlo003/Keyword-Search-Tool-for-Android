@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* A light gray background */
+    color: #333; /* A dark gray for text */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #fff; /* White background for the main container */
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+}
+
+h1 {
+    color: #000;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="file"],
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensures padding doesn't affect the width */
+}
+
+#results-container {
+    margin-top: 20px;
+}
+
+#file-list {
+    list-style: none;
+    padding: 0;
+}
+
+.file-item {
+    background-color: #eee;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.file-name {
+    flex-grow: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.open-button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.open-button:hover {
+    background-color: #333;
+}
+
+/* Color Scheme */
+body, .container {
+    background-color: #fff;
+    color: #000;
+}
+
+.container {
+    border: 1px solid #ccc;
+    box-shadow: none;
+}
+
+h1, h2 {
+    color: #000;
+}
+
+.input-group {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.file-item {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+}
