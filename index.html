@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Keyword Search Tool by Arthyme</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.mjs" type="module"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.worker.min.mjs" type="module"></script>
@@ -12,22 +15,74 @@
 </head>
 <body>
     <div class="container">
-        <h1>Keyword Search Tool by Arthyme</h1>
+        <header>
+            <h1>🔍 Keyword Search Tool</h1>
+            <p class="subtitle">by Arthyme</p>
+        </header>
         
-        <div class="input-group">
-            <label for="directory-selector">Select Directory:</label>
-            <input type="file" id="directory-selector" webkitdirectory directory multiple>
-        </div>
+        <div class="search-section">
+            <div class="input-group">
+                <label for="directory-selector">
+                    <span class="label-text">📁 Select Directory</span>
+                    <span class="label-hint">Choose a folder to search through</span>
+                </label>
+                <div class="file-input-wrapper">
+                    <input type="file" 
+                           id="directory-selector" 
+                           webkitdirectory 
+                           directory 
+                           multiple
+                           accept="*/*">
+                    <div class="file-input-display" id="directory-display">
+                        <span class="placeholder">No directory selected</span>
+                    </div>
+                </div>
+            </div>
 
-        <div class="input-group">
-            <label for="search-bar">Search Keyword:</label>
-            <input type="text" id="search-bar" placeholder="Enter keyword...">
+            <div class="input-group">
+                <label for="search-bar">
+                    <span class="label-text">🔎 Search Keyword</span>
+                    <span class="label-hint">Enter text to search for in files</span>
+                </label>
+                <div class="search-input-wrapper">
+                    <input type="text" 
+                           id="search-bar" 
+                           placeholder="Type your keyword here..."
+                           autocomplete="off">
+                    <button class="clear-search" id="clear-search" type="button">×</button>
+                </div>
+            </div>
         </div>
         
-        <div id="results-container">
-            <h2>Search Results:</h2>
-            <ul id="file-list">
-                </ul>
+        <div class="results-section">
+            <div class="results-header">
+                <h2>Search Results</h2>
+                <div class="results-stats">
+                    <span id="results-count">0 files found</span>
+                    <div class="loading-indicator" id="loading-indicator">
+                        <div class="spinner"></div>
+                        <span>Searching...</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="results-container" id="results-container">
+                <div class="empty-state" id="empty-state">
+                    <div class="empty-icon">📂</div>
+                    <h3>Ready to search</h3>
+                    <p>Select a directory and enter a keyword to begin searching through your files.</p>
+                </div>
+                <ul id="file-list" class="file-list"></ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Browser compatibility notice -->
+    <div class="compatibility-notice" id="compatibility-notice">
+        <div class="notice-content">
+            <span class="notice-icon">⚠️</span>
+            <span>Directory selection may not be fully supported in your browser. Please use Chrome, Edge, or Safari for best experience.</span>
+            <button class="notice-close" onclick="this.parentElement.parentElement.style.display='none'">×</button>
         </div>
     </div>
 </body>
